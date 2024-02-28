@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         dmSansVariable: ["DM Sans", "sans-serif"],
+        courgette: ["Courgette", "cursive"],
       },
     },
   },

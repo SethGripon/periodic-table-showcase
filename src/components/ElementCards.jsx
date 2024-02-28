@@ -1,20 +1,49 @@
 import React from 'react'
 
-const ElementCards = () => {
+const ElementCards = ({ element }) => {
+  const cateColorCard = (category) => {
+    switch (category) {
+      case "alkali metal" : return 'bg-red-600 text-white'
+      case "alkaline earth metal" : return 'bg-amber-500 text-white'
+      case "transition metal" : return 'bg-blue-300'
+      case "lanthanide" : return 'bg-blue-600 text-white'
+      case "actinide" : return 'bg-emerald-300'
+      case "post-transition metal" : return 'bg-[#B895C5]'
+      case "metalloid" : return 'bg-yellow-400'
+      case "diatomic nonmetal" : return 'bg-[#9EC87C]'
+      case "polyatomic nonmetal" : return 'bg-[#9EC87C]'
+      case "noble gas" : return 'bg-pink-300'
+      default : return 'bg-white'
+    }
+  }
+
+  const phaseColor = (phase) => {
+    switch (phase) {
+      case "Gas" : return 'text-red-700'
+      case "Liquid" : return 'text-blue-700'
+      default : return 'text-black'
+    }
+  }
+
+  const bgColorCard = cateColorCard(element.category)
+  const txtColorCard = phaseColor(element.phase)
+  
+  console.log(element.phase)
+
   return (
-    <div className='bg-purple-300 h-full w-100 font-dmSansVariable rounded-lg'>
-      <div className='flex flex-col justify-center items-center py-2 px-5'>
+    <div className={`${bgColorCard} h-full w-full font-dmSansVariable rounded-lg`}>
+      <div className='flex flex-col justify-center items-center'>
         {/* Number  */}
-        <p className='font-bold'>13</p>
+        <p className='text-[10px] font-bold'>{element.number}</p>
         {/* Symbol  */}
-        <h1 className='text-[50px] font-bold italic mt-[-15px] mb-[-10px]'>Al</h1>
-        <div className='flex flex-col justify-center items-center leading-4'>
+        <h1 className='text-[25px] font-courgette font-bold mt-[-5px] mb-[-5px]'>{element.symbol}</h1>
+        <div className='flex flex-col justify-center items-center leading-1'>
           {/* Name  */}
-          <h3 className='font-bold'>Aluminum</h3>
+          <h3 className={`text-[8px] font-bold ${txtColorCard}`}>{element.name}</h3>
           {/* Atomic Weight  */}
-          <h3 className='font-bold'>26.982</h3>
+          <h3 className='text-[7px]'>{element.atomic_mass.toFixed(3)}</h3>
           {/* Electrons  */}
-          <h4 className='text-[12px]'>2-8-3</h4>
+          <h4 className='text-[5px]'>{element.shells.length > 1 ? element.shells.join("-") : element.shells}</h4>
         </div>
       </div>
     </div>
