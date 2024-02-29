@@ -48,7 +48,7 @@ const TabbleWrapper = () => {
           {allElements.slice(12, 18).map((element, index) => <div style={{ gridArea: `3/${index + 13}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
 
           {/* main section of elements  */}
-          <div style={{ gridArea: `1 / 4 / span 2 / span 2` }}> <MainCard element={displayElement} /> </div>
+          <div className="h-[151px] w-[130px] m-auto" style={{ gridArea: `1 / 4 / span 3 / span 3` }}> <MainCard element={displayElement} /> </div>
 
           {/* center section  */}
           {allElements.slice(18, 36).map((element, index) => <div style={{ gridArea: `4/${index + 1}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
@@ -64,8 +64,8 @@ const TabbleWrapper = () => {
           <div className="bg-emerald-300 flex text-center items-center font-dmSansVariable rounded-lg h-full w-full text-[8px] font-bold" style={{ gridArea: `7/3` }}> 89-103 Acticides</div>
 
           {/* last section  */}
-          {allElements.slice(56, 71).map((element, index) => <div style={{ gridArea: `9/${index + 3}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
-          {allElements.slice(88, 103).map((element, index) => <div style={{ gridArea: `10/${index + 3}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
+          {allElements.slice(56, 71).map((element, index) => <div className="h-[53px] my-auto" style={{ gridArea: `8/${index + 3} / span 2 / span 1` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
+          {allElements.slice(88, 103).map((element, index) => <div className="h-[53px] my-auto" style={{ gridArea: `9/${index + 3} / span 2 / span 1` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
 
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 
 const MainCard = ({ element }) => {
   const cateColorCard = (category) => {
@@ -29,19 +30,49 @@ const MainCard = ({ element }) => {
   const txtColorCard = phaseColor(element.phase)
 
   return (
-    <div className={`${bgColorCard} h-full w-full font-dmSansVariable rounded-lg cursor-pointer`}>
-      <div className='flex flex-col justify-center items-center'>
+    <div className={`${bgColorCard} relative h-full w-full font-dmSansVariable rounded-lg cursor-pointer transition-all duration-500`}>
+      <div className='flex flex-col justify-center items-center '>
         {/* Number  */}
         <p className='text-[20px] font-bold'>{element.number}</p>
         {/* Symbol  */}
-        <h1 className='text-[50px] font-courgette font-bold mt-[-5px] mb-[-5px]'>{element.symbol}</h1>
+        <h1 className='text-[60px] font-courgette font-bold mt-[-9px] mb-[-10px]'>{element.symbol}</h1>
         <div className='flex flex-col justify-center items-center leading-4'>
           {/* Name  */}
-          <h3 className={`text-[18px] font-bold ${txtColorCard}`}>{element.name}</h3>
+          <h3 className={`text-[16px] font-bold ${txtColorCard}`}>{element.name}</h3>
           {/* Atomic Weight  */}
-          <h3 className='text-[16px] font-bold'>{element.atomic_mass.toFixed(3)}</h3>
+          <h3 className='text-[14px] font-bold'>{element.atomic_mass.toFixed(3)}</h3>
           {/* Electrons  */}
-          <h4 className='text-[12px]'>{element.shells.length > 1 ? element.shells.join("-") : element.shells}</h4>
+          <h4 className='text-[10px]'>{element.shells.length > 1 ? element.shells.join("-") : element.shells}</h4>
+        </div>
+      </div>
+      <div className='absolute top-2 -right-[97px] text-white'>
+        <div className='flex justify-center items-center'>
+          <HiArrowLongRight />
+          <p className='ps-1 text-[10px]'>Atomic Number</p>
+        </div>
+      </div>
+      <div className='absolute top-[60px] -left-[57px] text-white'>
+        <div className='flex justify-center items-center'>
+          <p className='pe-1 text-[10px]' >Symbol</p>
+          <HiArrowLongLeft />
+        </div>
+      </div>
+      <div className='absolute bottom-[36px] -left-[50px] text-white'>
+        <div className='flex justify-center items-center'>
+          <p className='pe-1 text-[10px]' >Name</p>
+          <HiArrowLongLeft />
+        </div>
+      </div>
+      <div className='absolute bottom-[20px] -right-[92px] text-white'>
+        <div className='flex justify-center items-center'>
+          <HiArrowLongRight />
+          <p className='ps-1 text-[10px]'>Atomic Weight</p>
+        </div>
+      </div>
+      <div className='absolute bottom-[2px] -right-[110px] text-white'>
+        <div className='flex justify-center items-center'>
+          <HiArrowLongRight />
+          <p className='ps-1 text-[10px]'>Electrons per Shell</p>
         </div>
       </div>
     </div>

@@ -29,17 +29,17 @@ const ElementCards = ({ element, handleHover }) => {
   const txtColorCard = phaseColor(element.phase)
 
   return (
-    <div onMouseOver={() => handleHover(element)} className={`${bgColorCard} h-full w-full font-dmSansVariable rounded-lg cursor-pointer`}>
+    <div onMouseOver={() => handleHover(element)} className={`${bgColorCard} h-full w-full font-dmSansVariable rounded-lg cursor-pointer hover:ring-white hover:ring-2 hover:drop-shadow-[5px_7px_50px_rgba(255,255,255,0.5)] duration-250`}>
       <div className='flex flex-col justify-center items-center'>
         {/* Number  */}
-        <p className='text-[10px] font-bold'>{element.number}</p>
+        <p className='text-[8px] font-bold'>{element.number}</p>
         {/* Symbol  */}
-        <h1 className='text-[25px] font-courgette font-bold mt-[-5px] mb-[-5px]'>{element.symbol}</h1>
-        <div className='flex flex-col justify-center items-center leading-1'>
+        <h1 className='text-[20px] font-courgette font-bold mt-[-5px] mb-[-5px]'>{element.symbol}</h1>
+        <div className='flex flex-col justify-center items-center leading-[6.5px]'>
           {/* Name  */}
-          <h3 className={`text-[8px] font-bold ${txtColorCard}`}>{element.name}</h3>
+          <h3 className={`text-[6px] font-bold ${txtColorCard}`}>{element.name}</h3>
           {/* Atomic Weight  */}
-          <h3 className='text-[7px]'>{element.atomic_mass.toFixed(3)}</h3>
+          <h3 className='text-[6px]'>{!Number.isInteger(element.atomic_mass) ? element.atomic_mass.toFixed(3) : element.atomic_mass}</h3>
           {/* Electrons  */}
           <h4 className='text-[5px]'>{element.shells.length > 1 ? element.shells.join("-") : element.shells}</h4>
         </div>
