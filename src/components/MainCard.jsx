@@ -45,34 +45,36 @@ const MainCard = ({ element }) => {
           <h4 className='text-[10px]'>{element.shells.length > 1 ? element.shells.join("-") : element.shells}</h4>
         </div>
       </div>
-      <div className='absolute top-2 -right-[97px] text-white'>
-        <div className='flex justify-center items-center'>
-          <HiArrowLongRight />
-          <p className='ps-1 text-[10px]'>Atomic Number</p>
+      <div className='text-black'>
+        <div className='absolute top-2 -right-[85px]'>
+          <div className='flex justify-center items-center'>
+            <HiArrowLongRight />
+            <p className='ps-1 text-[8px] font-bold'>Atomic Number</p>
+          </div>
         </div>
-      </div>
-      <div className='absolute top-[60px] -left-[57px] text-white'>
-        <div className='flex justify-center items-center'>
-          <p className='pe-1 text-[10px]' >Symbol</p>
-          <HiArrowLongLeft />
+        <div className='absolute top-[60px] -left-[50px]'>
+          <div className='flex justify-center items-center'>
+            <p className='pe-1 text-[8px] font-bold'>Symbol</p>
+            <HiArrowLongLeft />
+          </div>
         </div>
-      </div>
-      <div className='absolute bottom-[36px] -left-[50px] text-white'>
-        <div className='flex justify-center items-center'>
-          <p className='pe-1 text-[10px]' >Name</p>
-          <HiArrowLongLeft />
+        <div className='absolute bottom-[36px] -left-[45px]'>
+          <div className='flex justify-center items-center'>
+            <p className='pe-1 text-[8px] font-bold'>Name</p>
+            <HiArrowLongLeft />
+          </div>
         </div>
-      </div>
-      <div className='absolute bottom-[20px] -right-[92px] text-white'>
-        <div className='flex justify-center items-center'>
-          <HiArrowLongRight />
-          <p className='ps-1 text-[10px]'>Atomic Weight</p>
+        <div className='absolute bottom-[20px] -right-[80px]'>
+          <div className='flex justify-center items-center'>
+            <HiArrowLongRight />
+            <p className='ps-1 text-[8px] font-bold'>Atomic Weight</p>
+          </div>
         </div>
-      </div>
-      <div className='absolute bottom-[2px] -right-[110px] text-white'>
-        <div className='flex justify-center items-center'>
-          <HiArrowLongRight />
-          <p className='ps-1 text-[10px]'>Electrons per Shell</p>
+        <div className='absolute bottom-[2px] -right-[95px]'>
+          <div className='flex justify-center items-center'>
+            <HiArrowLongRight />
+            <p className='ps-1 text-[8px] font-bold'>Electrons per Shell</p>
+          </div>
         </div>
       </div>
     </div>

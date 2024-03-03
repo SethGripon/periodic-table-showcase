@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ElementCards from './ElementCards'
 import MainCard from './MainCard'
+import CategorySection from './CategorySection'
+import PhaseSection from './PhaseSection'
 
 const TabbleWrapper = () => {
   const [displayElement, setDisplayElement] = useState({
@@ -36,10 +38,10 @@ const TabbleWrapper = () => {
 
   return (
     <>
-      <div className='flex justify-center pb-5'>
+      <div className='flex justify-center'>
         <div className='custom-grid gap-1'>
           {/* first section of elements */}
-          {allElements.slice(0, 2).map((element) => element.number == 1 ? <div style={{ gridArea: '1/1' }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div> : <div style={{ gridArea: '1/18' }}> <ElementCards element={element} /> </div>)}
+          {allElements.slice(0, 2).map((element) => element.number == 1 ? <div style={{ gridArea: '1/1' }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div> : <div style={{ gridArea: '1/18' }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
           {/* left side  */}
           {allElements.slice(2, 4).map((element, index) => <div style={{ gridArea: `2/${index + 1}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
           {allElements.slice(10, 12).map((element, index) => <div style={{ gridArea: `3/${index + 1}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
@@ -49,6 +51,8 @@ const TabbleWrapper = () => {
 
           {/* main section of elements  */}
           <div className="h-[151px] w-[130px] m-auto" style={{ gridArea: `1 / 4 / span 3 / span 3` }}> <MainCard element={displayElement} /> </div>
+          <div className="ms-5" style={{ gridArea: `1 / 8 / span 3 / span 5` }}> <CategorySection /> </div>
+          <div style={{ gridArea: `1 / 13 / span 1 / span 5 ` }}> <PhaseSection /> </div>
 
           {/* center section  */}
           {allElements.slice(18, 36).map((element, index) => <div style={{ gridArea: `4/${index + 1}` }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}

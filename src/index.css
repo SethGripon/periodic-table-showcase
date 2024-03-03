@@ -8,5 +8,5 @@
 .custom-grid {
   display: grid;
   grid-template-columns: repeat(18, 48px);
-  grid-template-rows: repeat(10, 53px);
+  grid-template-rows: repeat(10, 54px);
 }
