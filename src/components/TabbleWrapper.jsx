@@ -1,41 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import ElementCards from './ElementCards'
 import MainCard from './MainCard'
 import CategorySection from './CategorySection'
 import PhaseSection from './PhaseSection'
 
-const TabbleWrapper = () => {
-  const [displayElement, setDisplayElement] = useState({
-    name: "Aluminum",
-    number: 13,
-    symbol: "Al",
-    atomic_mass: 26.982,
-    shells: [2, 8, 3],
-    category: "post-transition metal",
-    phase: "solid"
-  })
-
-  const [allElements, setAllElements] = useState([])
-
-  useEffect(() => {
-    fetch("https://kineticzephyr.onrender.com/periodictable")
-      .then(response => response.json())
-      .then(data => setAllElements(data.data))
-  }, [])
-
-  const handleHoverCard = (data) => {
-    setDisplayElement({
-      name: data.name,
-      number: data.number,
-      symbol: data.symbol,
-      atomic_mass: data.atomic_mass,
-      shells: data.shells,
-      category: data.category,
-      phase: data.phase
-    })
-  }
-
+const TabbleWrapper = ({ allElements, displayElement, handleHoverCard}) => {
   return (
     <>
       <div className='flex justify-center'>
