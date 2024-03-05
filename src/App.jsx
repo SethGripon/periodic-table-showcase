@@ -28,7 +28,6 @@ function App() {
     })
   }, [])
 
-
   const handleHoverCard = (data) => {
     setDisplayElement({
       name: data.name,
@@ -44,8 +43,8 @@ function App() {
   return (
     <>
       {isLoading ?
-        <div className="bg-[#fff7f1] z-50">
-          <div className="h-full w-full z-50 relative">
+        <div className="bg-[#fff7f1] z-10 relative">
+          <div className="h-full w-full z-50">
             <h1 className="text-3xl font-bold text-center font-dmSansVariable p-5 z-20">
               Periodic Table of the Elements!
             </h1>
@@ -59,11 +58,11 @@ function App() {
             <h1 className="text-3xl font-bold text-center font-dmSansVariable p-5 z-50">
               Let's try your luck on Elements
             </h1>
-            <QuizWrapper />
+            <QuizWrapper element={displayElement}/>
           </div>
           <Circles isLoading={isLoading} />
         </div> :
-        <div className='h-[100vh] bg-neutral-500 bg-opacity-50 flex justify-center items-center z-50'>
+        <div className='h-[100vh] bg-neutral-400 backdrop-opacity-10 flex justify-center items-center z-50'>
           <Loading />
           <Circles isLoading={isLoading} />
         </div>

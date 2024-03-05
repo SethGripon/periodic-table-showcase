@@ -7,7 +7,7 @@ import PhaseSection from './PhaseSection'
 const TabbleWrapper = ({ allElements, displayElement, handleHoverCard}) => {
   return (
     <>
-      <div className='flex justify-center'>
+      <div className='flex justify-center z-50'>
         <div className='custom-grid gap-1'>
           {/* first section of elements */}
           {allElements.slice(0, 2).map((element) => element.number == 1 ? <div style={{ gridArea: '1/1' }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div> : <div style={{ gridArea: '1/18' }}> <ElementCards handleHover={handleHoverCard} element={element} /> </div>)}
