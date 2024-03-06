@@ -58,7 +58,7 @@ function App() {
             <h1 className="text-3xl font-bold text-center font-dmSansVariable p-5 z-50">
               Let's try your luck on Elements
             </h1>
-            <QuizWrapper element={displayElement}/>
+            <QuizWrapper element={allElements[76]}/>
           </div>
           <Circles isLoading={isLoading} />
         </div> :
